@@ -60,9 +60,9 @@ pro3 = checkDigitsInName("myname55")
 print(pro3)
 
 
-# problem 3
+# problem 4
 def  calculateFinalScore(obj):
-    if type(obj['name']) is str or isinstance(obj["testScore"], (int, float)) or isinstance(obj["schoolGrade"], (int, float)) :
+    if type(obj['name']) is str and isinstance(obj["testScore"], (int, float)) and isinstance(obj["schoolGrade"], (int, float)) :
         # set variable
         Profession = 0;
         TestScore = obj["testScore"];
@@ -89,4 +89,27 @@ def  calculateFinalScore(obj):
         return "Invalid Input"
 pro4 = calculateFinalScore({ "name": "Rajib", "testScore": 45, "schoolGrade": 5,"isFFamily" : True })
 print(pro4)
+
+# problem 5
+def waitingTime(waitingTimes , serialNumber):
+    if len(waitingTimes) and isinstance(serialNumber, (int, float)):
+        # set variable
+        Time = waitingTimes
+        Serial = serialNumber - 1
+        interviewer = len(Time)
+
+        total_sum = sum(Time)
+        average = total_sum / interviewer
+        print(total_sum,average)
+
+        netPeople =  Serial - interviewer
+        netTime = netPeople*average
+
+        return netTime
+    else :
+        return "Invalid Input"
+WaitingTime = waitingTime([13, 2], 6 )
+print(WaitingTime)    
+
+
 
