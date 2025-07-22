@@ -46,5 +46,47 @@ print(pro2)
 
 
 # problem 3
+import re
 
+def checkDigitsInName(name):
+    if type(name) is str:
+        if re.search(r'\d', name):
+            return True
+        else:
+            return False
+    else:
+        return "Invalid Input"
+pro3 = checkDigitsInName("myname55")
+print(pro3)
+
+
+# problem 3
+def  calculateFinalScore(obj):
+    if type(obj['name']) is str or isinstance(obj["testScore"], (int, float)) or isinstance(obj["schoolGrade"], (int, float)) :
+        # set variable
+        Profession = 0;
+        TestScore = obj["testScore"];
+        IsFFamily = obj["isFFamily"];
+        SchoolGrade = obj["schoolGrade"];
+
+        # cake is father farmer
+        if type(IsFFamily) == bool:
+            Profession = 20;
+        else :
+            Profession = 0;
+
+        # sum the data
+        sum = Profession + TestScore + SchoolGrade
+
+        # print the number
+        print(Profession,TestScore,SchoolGrade,IsFFamily)
+
+        if (sum >= 80) :
+            return True
+        else :
+            return False
+    else: 
+        return "Invalid Input"
+pro4 = calculateFinalScore({ "name": "Rajib", "testScore": 45, "schoolGrade": 5,"isFFamily" : True })
+print(pro4)
 
